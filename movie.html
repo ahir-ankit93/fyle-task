@@ -1,0 +1,24 @@
+<div class="container">
+        <div ng-controller="movieController">
+                <h2>Result for : {{searchTitle}}</h2><a href="#!">Back</a>
+                <table class="table table-responsive table-bordered table-hover" ng-if="Movies.length" border="1">
+                    <tr>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Poster</th>
+                    </tr>
+                    <tr ng-repeat="Movie in Movies | filter:searchbox">
+                            <td>{{Movie.Title}}</td>
+                            <td>{{Movie.Year}}</td>
+                            <td>{{Movie.imdbID}}></td>
+                            <td>{{Movie.Type}}</td>
+                            <td><img src="{{Movie.Poster}}" alt="poster is not there "></td>
+            
+                        </tr>
+                </table>
+            </div>
+
+</div>
+

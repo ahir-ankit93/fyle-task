@@ -1,0 +1,31 @@
+<div class="container">
+        <div ng-controller="defaultController">
+            <br><br>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                        <div class="input-group">
+                                <input type="text" class="form-control" placeholder="search movie here ..." ng-model="searchbox">
+                              
+                            <div class="input-group-btn">
+                                    <input type="button" class="btn btn-info" ng-click="searchMovie()" value="search">
+                                    <br><br>
+                            </div>
+                        </div>
+                        <br>
+                </div>
+            </div>
+             
+        <div class="col-md-12">
+            <div class="col-md-6">         
+                <div ng-if="recentSearchToShow.length">
+                    <h4> Recent Search: </h4>
+                        <ul>
+                            <li ng-repeat="search in recentSearchToShow track by $index| limitTo: quantity">
+                                <a href="#" ng-click="recentClick($event, search)">{{search}}</a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
